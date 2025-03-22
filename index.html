@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mom!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            background: url('https://media.tenor.com/5rAVIDwvkgQAAAAM/my-neighbor-totoro-ghibli.gif') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 5%;
+            padding: 20px;
+        }
+
+        .btn {
+            background: #007BFF;
+            border: 4px solid white;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 0px #0056b3;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+            box-shadow: 2px 2px 0px white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Indie Game Frame for Mom's Photo */
+        .photo-frame {
+            width: 250px;
+            height: 250px;
+            background: #1e1e1e;
+            border: 8px solid #f0e68c;
+            padding: 10px;
+            margin: 20px auto;
+            box-shadow: 6px 6px 0px white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .photo-frame {
+                width: 200px;
+                height: 200px;
+            }
+
+            .btn {
+                font-size: 12px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Indie Game Styled Frame with Mom's Photo -->
+        <div class="photo-frame">
+            <img src="1.jpg" alt="Mom's Photo">
+        </div>
+
+        <h1>Happy Birthday Mom! 🎂</h1>
+        <button id="btn1" class="btn" onclick="nextStep()">I hope you woke up well</button>
+
+        <p id="message" class="hidden">
+            <button id="btn2" class="btn" onclick="showHoveringButton()">arey where is the message</button>
+        </p>
+        <p id="hoveringBtnContainer" class="hidden">
+            <button id="btn3" class="btn hovering" onclick="goToMessage()">I think it is here</button>
+        </p>
+    </div>
+
+    <script>
+        function nextStep() {
+            document.getElementById("btn1").style.display = "none"; // Hide first button
+            document.getElementById("message").classList.remove("hidden"); // Show next button
+        }
+
+        function showHoveringButton() {
+            document.getElementById("btn2").style.display = "none"; // Hide second button
+            document.getElementById("hoveringBtnContainer").classList.remove("hidden"); // Show floating button
+        }
+
+        function goToMessage() {
+            document.getElementById("btn3").style.display = "none"; // Hide last button
+            window.location.href = "final_message.html"; // Redirect
+        }
+    </script>
+</body>
+</html>
+
+
